@@ -1,0 +1,43 @@
+.header {
+    background-image: url('event2.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .header h1 {
+    font-size: 4em;
+    font-weight: bold;
+  }
+  
+  .content {
+    max-width: 800px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar el contenido */
+    padding: 0 20px; /* Añadir un poco de espacio a los lados */
+  }
+  
+  .header p {
+    font-size: 1.5em;
+    margin: 20px 0;
+    text-align: justify;
+  }
+  
+  .btn-custom {
+    margin: 10px;
+    padding: 10px 35px;
+    font-size: 1.2em;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease; /* Transición para la sombra */
+  }
+  
+  .btn-custom:hover {
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Ajusta la sombra al pasar el cursor */
+  }
+  

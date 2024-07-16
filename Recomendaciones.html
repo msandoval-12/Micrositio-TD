@@ -14,36 +14,36 @@
       background-color: #f8f9fa;
     }
 
-    .navbar-custom {
+    .navbar-custom, .footer-custom {
       background-color: #320842; /* Color azul marino */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+      box-shadow: 0 4px 8px rgba(247, 5, 5, 0.719); /* Sombra */
       padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .navbar-custom .navbar-brand img {
+    .navbar-custom .navbar-brand img, .footer-custom .navbar-brand img {
       height: 40px;
       transition: box-shadow 0.3s ease; /* Transición para la sombra */
     }
 
-    .navbar-custom .navbar-brand img:hover {
-      box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.5); /* Sombra al pasar el cursor */
+    .navbar-custom .navbar-brand img:hover, .footer-custom .navbar-brand img:hover {
+      box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.904); /* Sombra al pasar el cursor */
     }
 
-    .navbar-custom .nav-links {
+    .navbar-custom .nav-links, .footer-custom .nav-links {
       display: flex;
       gap: 15px;
     }
 
-    .navbar-custom .nav-link {
+    .navbar-custom .nav-link, .footer-custom .nav-link {
       color: white;
       font-size: 1.1em;
       transition: color 0.2s ease;
     }
 
-    .navbar-custom .nav-link:hover {
+    .navbar-custom .nav-link:hover, .footer-custom .nav-link:hover {
       color: #ffd700; /* Cambia el color al pasar el cursor */
     }
 
@@ -53,7 +53,7 @@
       top: 0;
       left: 0;
       width: 250px;
-      background-color: #002147; /* Cambiar color a azul marino */
+      background-color: #210d94ea; /* Cambiar color a azul marino */
       color: white;
       padding-top: 60px; /* Ajustar para el header */
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -69,6 +69,12 @@
     .sidebar .profile img {
       width: 150px;
       margin-bottom: 10px;
+      border-radius: 15%; /* Redondear menos la imagen */
+      transition: box-shadow 0.3s ease; /* Transición para la sombra */
+    }
+
+    .sidebar .profile img:hover {
+      box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.5); /* Sombra al pasar el cursor */
     }
 
     .sidebar .nav-link {
@@ -108,19 +114,61 @@
       background-color: #001F3F; /* Cambiar color a azul marino oscuro */
       color: white;
       text-align: center;
-      padding: 50px 0;
+      padding: 70px 0; /* Hacer más grande el primer recuadro */
+      margin-bottom: 40px; /* Separar del primer recuadro */
+      border-radius: 15px; /* Redondear bordes */
     }
 
     .recommendation {
       background-color: white;
-      padding: 20px;
-      border-radius: 5px;
-      margin-bottom: 20px;
+      padding: 30px; /* Aumentar el tamaño de los recuadros */
+      border-radius: 15px; /* Redondear bordes */
+      margin-bottom: 40px; /* Separar los recuadros entre sí */
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .section {
       padding: 50px 0;
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px; /* Redondear bordes */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      border-top-left-radius: 15px; /* Redondear bordes */
+      border-top-right-radius: 15px; /* Redondear bordes */
+    }
+
+    .card-title {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .btn-read-more {
+      background-color: #320842;
+      color: white;
+      border-radius: 20px;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn-read-more:hover {
+      background-color: #210d94ea;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .modal-content {
+      border-radius: 10px; /* Redondear un poco más los bordes */
+      background-color: #001F3F; /* Fondo azul marino */
+      color: white; /* Texto blanco */
     }
   </style>
 </head>
@@ -139,7 +187,7 @@
     <div class="profile">
       <img src="Logo2.jpeg.jpeg" alt="Logo de la Empresa">
     </div>
-    <a href="#" class="nav-link"><i class="fas fa-home"></i> Home</a>
+    <a href="#" class="nav-link"><i class="fas fa-home"></i> Inicio</a>
     <div class="menu-title">SECCIONES</div>
     <a href="#seccion1" class="nav-link"><i class="fas fa-database"></i> Cantidad de datos</a>
     <a href="#seccion2" class="nav-link"><i class="fas fa-check-circle"></i> Calidad de Datos</a>
@@ -177,7 +225,142 @@
     </div>
     <div id="seccion6" class="section recommendation">
       <h2>Aplicaciones prácticas en diversos sectores industriales</h2>
-      <p>Descripción de la recomendación sobre aplicaciones prácticas en diversos sectores industriales...</p>
+      <div class="row">
+        <!-- Miniblog 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="blog1.jpg" class="card-img-top" alt="Blog Image 1">
+            <div class="card-body">
+              <h5 class="card-title">Título del Blog 1</h5>
+              <p class="card-text">Breve descripción del contenido del blog 1...</p>
+              <a href="#" class="btn btn-read-more">Leer más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Miniblog 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="blog2.jpg" class="card-img-top" alt="Blog Image 2">
+            <div class="card-body">
+              <h5 class="card-title">Título del Blog 2</h5>
+              <p class="card-text">Breve descripción del contenido del blog 2...</p>
+              <a href="#" class="btn btn-read-more">Leer más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Miniblog 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="blog3.jpg" class="card-img-top" alt="Blog Image 3">
+            <div class="card-body">
+              <h5 class="card-title">Título del Blog 3</h5>
+              <p class="card-text">Breve descripción del contenido del blog 3...</p>
+              <a href="#" class="btn btn-read-more">Leer más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Miniblog 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="blog4.jpg" class="card-img-top" alt="Blog Image 4">
+            <div class="card-body">
+              <h5 class="card-title">Título del Blog 4</h5>
+              <p class="card-text">Breve descripción del contenido del blog 4...</p>
+              <a href="#" class="btn btn-read-more">Leer más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Miniblog 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="blog5.jpg" class="card-img-top" alt="Blog Image 5">
+            <div class="card-body">
+              <h5 class="card-title">Título del Blog 5</h5>
+              <p class="card-text">Breve descripción del contenido del blog 5...</p>
+              <a href="#" class="btn btn-read-more">Leer más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Miniblog 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="blog6.jpg" class="card-img-top" alt="Blog Image 6">
+            <div class="card-body">
+              <h5 class="card-title">Título del Blog 6</h5>
+              <p class="card-text">Breve descripción del contenido del blog 6...</p>
+              <a href="#" class="btn btn-read-more">Leer más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Miniblog 7 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="blog7.jpg" class="card-img-top" alt="Blog Image 7">
+            <div class="card-body">
+              <h5 class="card-title">Título del Blog 7</h5>
+              <p class="card-text">Breve descripción del contenido del blog 7...</p>
+              <a href="#" class="btn btn-read-more">Leer más</a>
+            </div>
+          </div>
+        </div>
+        <!-- Miniblog 8 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="blog8.jpg" class="card-img-top" alt="Blog Image 8">
+            <div class="card-body">
+              <h5 class="card-title">Título del Blog 8</h5>
+              <p class="card-text">Breve descripción del contenido del blog 8...</p>
+              <a href="#" class="btn btn-read-more">Leer más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-custom">
+    <a class="navbar-brand" href="#">
+      <img src="Logo1.png.png" alt="Logo de la Empresa">
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Términos y Condiciones</a>
+      <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Política de Privacidad</a>
+    </div>
+  </footer>
+
+  <!-- Modal Términos y Condiciones -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="termsModalLabel">Términos y Condiciones</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Aquí van los términos y condiciones...</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Política de Privacidad -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacyModalLabel">Política de Privacidad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Aquí va la política de privacidad...</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -185,6 +368,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+
 
 
 

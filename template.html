@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Título del Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #c8d1f0; /* Fondo azul claro */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .navbar-custom {
+      background-color: #320842; /* Color azul marino */
+      box-shadow: 0 4px 8px rgba(247, 5, 5, 0.719); /* Sombra */
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-custom .navbar-brand img {
+      height: 50px; /* Incrementa el tamaño de la imagen */
+      border-radius: 10px; /* Añade un borde redondeado */
+      transition: box-shadow 0.3s ease; /* Transición para la sombra */
+    }
+
+    .navbar-custom .navbar-brand img:hover {
+      box-shadow: 0px 8px 15px rgba(255, 255, 255, 0.904); /* Sombra al pasar el cursor */
+    }
+
+    .navbar-custom .nav-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar-custom .nav-link {
+      color: white;
+      font-size: 1.1em;
+      transition: color 0.2s ease;
+    }
+
+    .navbar-custom .nav-link:hover {
+      color: #ffd700; /* Cambia el color al pasar el cursor */
+    }
+
+    .content {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex: 1; /* Para que ocupe el espacio disponible */
+      gap: 20px;
+    }
+
+    .text-content {
+      flex: 1;
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px; /* Redondear bordes */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-content {
+      flex: 1;
+      border-radius: 15px; /* Redondear bordes */
+      overflow: hidden; /* Para asegurar que la imagen no se desborde */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: relative; /* Necesario para el efecto de luz */
+    }
+
+    .image-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Para asegurar que la imagen cubra todo el área */
+      border-radius: 15px; /* Redondear bordes */
+    }
+
+    .footer-custom {
+      background-color: #320842; /* Color azul marino */
+      box-shadow: 0 4px 8px rgba(247, 5, 5, 0.719); /* Sombra */
+      padding: 10px 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .footer-custom .nav-link {
+      color: white;
+      font-size: 1.1em;
+      transition: color 0.2s ease;
+    }
+
+    .footer-custom .nav-link:hover {
+      color: #ffd700; /* Cambia el color al pasar el cursor */
+    }
+
+    .modal-content {
+      border-radius: 10px; /* Redondear un poco más los bordes */
+      background-color: #001F3F; /* Fondo azul marino */
+      color: white; /* Texto blanco */
+    }
+
+    h1#blog-title {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #320842;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-custom">
+    <a class="navbar-brand" href="#">
+      <img src="Logo_princ.jpeg" alt="Logo de la Empresa">
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="recomendaciones.html">Home</a>
+      <a class="nav-link" href="https://insaite.io/contacto/">Contact Us</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="text-content">
+      <h1 id="blog-title">Título del Blog</h1>
+      <div id="blog-content">
+        <!-- Contenido dinámico aquí -->
+      </div>
+    </div>
+    <div class="image-content">
+      <img id="blog-image" src="path/to/your/image.jpg" alt="Descripción de la imagen">
+    </div>
+  </div>
+
+  <footer class="footer-custom">
+    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Términos y Condiciones</a>
+    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Política de Privacidad</a>
+  </footer>
+
+  <!-- Modal Términos y Condiciones -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="termsModalLabel">Términos y Condiciones</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Aquí van los términos y condiciones...</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Política de Privacidad -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacyModalLabel">Política de Privacidad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Aquí va la política de privacidad...</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+  <script>
+    // Objeto que contiene el contenido de cada blog
+    const blogContent = {
+      'blog1': {
+        title: 'Banca y Finanzas',
+        content: '<p>Contenido detallado sobre Banca y Finanzas...</p><p>Otro contenido adicional sobre el tema...</p>',
+        image: 'path/to/your/image1.jpg'
+      },
+      'blog2': {
+        title: 'Healthcare',
+        content: '<p>Contenido detallado sobre Healthcare...</p><p>Otro contenido adicional sobre el tema...</p>',
+        image: 'path/to/your/image2.jpg'
+      },
+      'blog3': {
+        title: 'Ventas y Marketing',
+        content: '<p>Contenido detallado sobre Ventas y Marketing...</p><p>Otro contenido adicional sobre el tema...</p>',
+        image: 'path/to/your/image3.jpg'
+      },
+      'blog4': {
+        title: 'Educación',
+        content: '<p>Contenido detallado sobre Educación...</p><p>Otro contenido adicional sobre el tema...</p>',
+        image: 'path/to/your/image4.jpg'
+      },
+      'blog5': {
+        title: 'Gobierno',
+        content: '<p>Contenido detallado sobre Gobierno...</p><p>Otro contenido adicional sobre el tema...</p>',
+        image: 'path/to/your/image5.jpg'
+      },
+      'blog6': {
+        title: 'Logística y Transporte',
+        content: '<p>Contenido detallado sobre Logística y Transporte...</p><p>Otro contenido adicional sobre el tema...</p>',
+        image: 'path/to/your/image6.jpg'
+      },
+      'blog7': {
+        title: 'Retail',
+        content: '<p>Contenido detallado sobre Retail...</p><p>Otro contenido adicional sobre el tema...</p>',
+        image: 'path/to/your/image7.jpg'
+      },
+      'blog8': {
+        title: 'Manufactura',
+        content: '<p>Contenido detallado sobre Manufactura...</p><p>Otro contenido adicional sobre el tema...</p>',
+        image: 'path/to/your/image8.jpg'
+      },
+ 
+    };
+
+    // Obtener el parámetro de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const blogId = urlParams.get('blog');
+
+    // Si el blog existe en el objeto, cargar el contenido
+    if (blogContent[blogId]) {
+      document.getElementById('page-title').textContent = blogContent[blogId].title;
+      document.getElementById('blog-title').textContent = blogContent[blogId].title;
+      document.getElementById('blog-content').innerHTML = blogContent[blogId].content;
+      document.getElementById('blog-image').src = blogContent[blogId].image;
+      document.getElementById('blog-image').alt = blogContent[blogId].title;
+    } else {
+      document.getElementById('blog-title').textContent = 'Blog no encontrado';
+      document.getElementById('blog-content').innerHTML = '<p>El blog solicitado no existe.</p>';
+      document.getElementById('blog-image').src = '';
+      document.getElementById('blog-image').alt = 'Imagen no encontrada';
+    }
+  </script>
+</body>
+</html>
+
+
+
